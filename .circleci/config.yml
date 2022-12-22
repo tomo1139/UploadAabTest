@@ -25,21 +25,13 @@ jobs:
           command: bundle install
 
       - run:
-          name: Install firebase
-          command: |
-            curl -sL firebase.tools | bash
-
-      - run:
           name: Install fastlane plugin
           command: echo y | bundle exec fastlane add_plugin firebase_app_distribution
 
       - run:
-          name: pwd
-          command: pwd
-
-      - run:
-          name: ls
-          command: ls
+          name: Install firebase
+          command: |
+            curl -sL firebase.tools | bash
 
       - run:
           name: upload

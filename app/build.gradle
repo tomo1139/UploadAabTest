@@ -15,7 +15,7 @@ android {
     compileSdk 32
 
     defaultConfig {
-        applicationId "develop.beta1139.uploadaabtest"
+        applicationId "develop.beta1139.ocr_radio"
         minSdk 29
         targetSdk 32
         versionCode 1
