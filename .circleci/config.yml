@@ -1,0 +1,30 @@
+version: 2.1
+
+orbs:
+  android: circleci/android@1.0.3
+
+jobs:
+  build:
+    executor:
+      name: android/android-machine
+
+    steps:
+      - checkout
+
+      - run:
+          name: Release build
+          command: |
+            ./gradlew bundleRelease;
+
+      - store_artifacts:
+          path: app/build/outputs/bundle/release/app-release.aab
+          destination: app-release.aab
+
+workflows:
+  sample:
+    jobs:
+      - build:
+          filters:
+            branches:
+              only:
+                - master
