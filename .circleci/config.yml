@@ -30,8 +30,8 @@ jobs:
             curl -sL firebase.tools | bash
 
       - run:
-          name: Install plugin
-          command: fastlane add_plugin firebase_app_distribution
+          name: Install fastlane plugin
+          command: sudo bundle exec fastlane install_plugins
 
       - run:
           name: upload
