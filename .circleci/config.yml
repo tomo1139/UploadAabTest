@@ -31,7 +31,7 @@ jobs:
 
       - run:
           name: Install fastlane plugin
-          command: echo y | bundle exec fastlane install_plugins
+          command: echo y | bundle exec fastlane add_plugin firebase_app_distribution
 
       - run:
           name: upload
