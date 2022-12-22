@@ -15,7 +15,7 @@ jobs:
           name: Release build
           command: |
             ./gradlew bundleRelease;
-          working_directory: TestAndroid
+          working_directory: UploadAabTest
 
       - store_artifacts:
           path: app/build/outputs/bundle/release/app-release.aab
@@ -24,18 +24,18 @@ jobs:
       - run:
           name: Install fastlane
           command: bundle install
-          working_directory: TestAndroid
+          working_directory: UploadAabTest
 
       - run:
           name: Install firebase
           command: |
             curl -sL firebase.tools | bash
-          working_directory: TestAndroid
+          working_directory: UploadAabTest
 
       - run:
           name: upload
           command: bundle exec fastlane deploy_aab_to_firebase branch:master app_id:$FIREBASE_APP_ID firebase_token:$FIREBASE_TOKEN
-          working_directory: TestAndroid
+          working_directory: UploadAabTest
 
 
 workflows:
