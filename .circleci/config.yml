@@ -31,7 +31,7 @@ jobs:
 
       - run:
           name: Install fastlane plugin
-          command: bundle exec fastlane install_plugins
+          command: fastlane install_plugins
 
       - run:
           name: upload
