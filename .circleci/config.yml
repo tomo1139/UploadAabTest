@@ -34,8 +34,8 @@ jobs:
 
       - run:
           name: upload
-	  command: bundle exec fastlane deploy_aab_to_firebase branch:master app_id:$FIREBASE_APP_ID firebase_token:$FIREBASE_TOKEN
-	  working_directory: TestAndroid
+          command: bundle exec fastlane deploy_aab_to_firebase branch:master app_id:$FIREBASE_APP_ID firebase_token:$FIREBASE_TOKEN
+          working_directory: TestAndroid
 
 
 workflows:
