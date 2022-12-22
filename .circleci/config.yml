@@ -16,10 +16,6 @@ jobs:
           command: |
             ./gradlew assembleRelease;
 
-      - store_artifacts:
-          path: app/build/outputs/apk/release/app-release.apk
-          destination: app-release.aab
-
       - run:
           name: Install fastlane
           command: bundle install
