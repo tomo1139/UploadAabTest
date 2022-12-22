@@ -36,11 +36,11 @@ jobs:
 
       - run:
           name: upload release apk
-          command: bundle exec fastlane deploy_aab_to_firebase apk_path:"/home/circleci/project/app/build/outputs/apk/release/app-release.apk" app_id:$FIREBASE_APP_ID firebase_token:$FIREBASE_TOKEN release_notes:"release buid"
+          command: bundle exec fastlane deploy_aab_to_firebase apk_path:"/home/circleci/project/app/build/outputs/apk/release/app-release.apk" app_id:$FIREBASE_APP_ID firebase_token:$FIREBASE_TOKEN release_notes:"release版"
 
       - run:
           name: upload debug apk
-          command: bundle exec fastlane deploy_aab_to_firebase apk_path:"/home/circleci/project/app/build/outputs/apk/debug/app-debug.apk" app_id:$FIREBASE_APP_ID firebase_token:$FIREBASE_TOKEN release_notes:"debug buid"
+          command: bundle exec fastlane deploy_aab_to_firebase apk_path:"/home/circleci/project/app/build/outputs/apk/debug/app-debug.apk" app_id:$FIREBASE_APP_ID firebase_token:$FIREBASE_TOKEN release_notes:"debug版"
 
 
 workflows:
