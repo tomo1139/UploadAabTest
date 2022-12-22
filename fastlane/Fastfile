@@ -19,7 +19,7 @@ platform :android do
   lane :deploy_aab_to_firebase do |options|
     firebase_app_distribution(
       app: "#{options[:app_id]}",
-      apk_path: "/home/circleci/project/app/build/outputs/apk/release/app-release.apk",
+      apk_path: "#{options[:apk_path]}",
       firebase_cli_token: "#{options[:firebase_token]}",
       release_notes: "release版"
     )

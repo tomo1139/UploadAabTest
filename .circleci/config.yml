@@ -17,6 +17,11 @@ jobs:
             ./gradlew assembleRelease;
 
       - run:
+          name: Debug build
+          command: |
+            ./gradlew assembleDebug;
+
+      - run:
           name: Install fastlane
           command: bundle install
 
@@ -30,8 +35,12 @@ jobs:
             curl -sL firebase.tools | bash
 
       - run:
-          name: upload
-          command: bundle exec fastlane deploy_aab_to_firebase branch:master app_id:$FIREBASE_APP_ID firebase_token:$FIREBASE_TOKEN
+          name: upload release apk
+          command: bundle exec fastlane deploy_aab_to_firebase apk_path:"/home/circleci/project/app/build/outputs/apk/release/app-release.apk" app_id:$FIREBASE_APP_ID firebase_token:$FIREBASE_TOKEN
+
+      - run:
+          name: upload debug apk
+          command: bundle exec fastlane deploy_aab_to_firebase apk_path:"/home/circleci/project/app/build/outputs/apk/debug/app-debug.apk" app_id:$FIREBASE_APP_ID firebase_token:$FIREBASE_TOKEN
 
 
 workflows:
