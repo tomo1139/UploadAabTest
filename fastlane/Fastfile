@@ -21,7 +21,7 @@ platform :android do
       app: "#{options[:app_id]}",
       apk_path: "#{options[:apk_path]}",
       firebase_cli_token: "#{options[:firebase_token]}",
-      release_notes: "release版"
+      release_notes: "#{options[:release_notes]}"
     )
   end
 end
