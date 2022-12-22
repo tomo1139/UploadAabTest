@@ -24,13 +24,13 @@ jobs:
       - run:
           name: Install fastlane
           command: bundle install
-	  working_directory: TestAndroid
+          working_directory: TestAndroid
 
       - run:
           name: Install firebase
-	  command: |
+          command: |
 	    curl -sL firebase.tools | bash
-	  working_directory: TestAndroid
+          working_directory: TestAndroid
 
       - run:
           name: upload
